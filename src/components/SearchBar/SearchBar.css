@@ -1,0 +1,25 @@
+.searchBar > input {
+  width: 85%;
+  height: 100%;
+  padding-left: 20px;
+  border: none;
+  border-right: 1px black solid;
+}
+input[type="text"]::placeholder {
+  font-size: large;
+}
+.searchImage {
+    width: 15%;
+    height: 100%;
+    padding-left: auto;
+    border: 2px solid red;
+}
+.searchBar {
+  width: 568px;
+  height: 48px;
+  /* display: flex; */
+  background-color: var(--white-color);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid black;
+}

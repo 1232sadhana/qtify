@@ -1,0 +1,25 @@
+.navbar{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    /* justify-content: space-around; */
+    padding: 13px;
+    /* justify-content: center; */
+    border: 2px solid red;
+    
+}
+.navbar > input{
+    width: 588px;
+}
+.navbar > button{
+    background-color: var(--black-color);
+    color: var(--primary-color);
+    border-radius: 12px;
+    border: none;
+    padding: 1rem;
+    font-size: larger;
+    
+    
+}
