@@ -1,6 +1,12 @@
 import React from "react";
 import "./HeroSection.css";
 import headphoneImage from "../../Assets/headphone.png";
+
+/**
+ * Represents the hero section of the application.
+ * Displays a left section with text and a right section with an image.
+ * @returns {JSX.Element} The rendered hero section component.
+ */
 const HeroSection = () => {
   return (
     <div className="hero">

@@ -1,5 +1,12 @@
+
 import "./SearchBar.css";
-import searchIcon from "../../Assets/Search icon.png";
+import searchIcon from "../../../Assets/Search icon.png";
+
+/**
+ * Represents the search bar component.
+ * Renders a search bar with an input field and a search icon.
+ * @returns {JSX.Element} The rendered search bar component.
+ */
 const SearchBar = () => {
   return (
     <div className="searchBar">

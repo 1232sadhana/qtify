@@ -1,4 +1,4 @@
-button{
+.navButton{
     width: 170px;
     height: 47px;
     background-color: var(--black-color);
@@ -9,6 +9,6 @@ button{
     font-size: 18px;
     letter-spacing: 0.25px;
 }
-button:hover{
+.navButton:hover{
     cursor: pointer;
 }
