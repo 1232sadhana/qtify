@@ -3,12 +3,10 @@ import searchIcon from "../../Assets/Search icon.png";
 const SearchBar = () => {
   return (
     <div className="searchBar">
-      <input type="text" placeholder="Search an album of your choice" />
-      <a className="">
-        <button className="searchImage">
-          <img src={searchIcon} alt="search Icon" />
-        </button>
-      </a>
+      <input type="search" placeholder="Search an album of your choice" />
+      <div className="searchIconCont">
+        <img src={searchIcon} className="searchImage" alt="search Icon" />
+      </div>
     </div>
   );
 };
