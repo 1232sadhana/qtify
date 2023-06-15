@@ -1,10 +1,10 @@
-import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
 import "./Layout.css";
 const Layout = () => {
   return (
-    <div className="wrapper">
-      <Header />
-    </div>
+    <>
+      <NavBar />
+    </>
   );
 };
 

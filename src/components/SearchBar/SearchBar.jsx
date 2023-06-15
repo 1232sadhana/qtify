@@ -5,9 +5,9 @@ const SearchBar = () => {
     <div className="searchBar">
       <input type="text" placeholder="Search an album of your choice" />
       <a className="">
-        <div className="searchImage">
+        <button className="searchImage">
           <img src={searchIcon} alt="search Icon" />
-        </div>
+        </button>
       </a>
     </div>
   );

@@ -1,10 +1,6 @@
-import LogoImage from "../../Assets/logo.png"
+import LogoImage from "../../Assets/logo.png";
 const Logo = () => {
-  return (
-    <>
-        <img src={LogoImage} alt="" />
-    </>
-  )
-}
+  return <img src={LogoImage} alt="Logo" />;
+};
 
-export default Logo
+export default Logo;

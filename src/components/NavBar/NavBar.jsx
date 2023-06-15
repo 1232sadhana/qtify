@@ -1,16 +1,17 @@
 import React from 'react'
 import Logo from '../Logo/Logo'
 import SearchBar from '../SearchBar/SearchBar'
-import "./Header.css"
+import "./NavBar.css"
+import Button from '../Button/Button'
 
-const Header = () => {
+const NavBar = () => {
   return (
-    <nav className='navbar'>
+    <nav className='navBar'>
         <Logo/>
         <SearchBar/>
-        <button>Give Feedback</button>
+        <Button text="Give Feedback"/>
     </nav>
   )
 }
 
-export default Header
+export default NavBar

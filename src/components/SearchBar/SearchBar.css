@@ -8,11 +8,12 @@
 input[type="text"]::placeholder {
   font-size: large;
 }
-.searchImage {
+.searchBar > button {
     width: 15%;
-    height: 100%;
-    padding-left: auto;
-    border: 2px solid red;
+    /* height: 100%; */
+    /* padding-left: auto; */
+    /* object-fit: cover; */
+    background: url("../../Assets/Search icon.png");
 }
 .searchBar {
   width: 568px;
