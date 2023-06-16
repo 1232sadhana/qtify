@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { topAlbumData, getUId } from "../AxiosData/AxiosData";
+import { newAlbumData, getUId } from "../AxiosData/AxiosData";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Card from "../Card/Card";
-import "./TopAlbum.css";
+import "./NewAlbum.css";
 
 /**
  * Represents the top album component.
  * Displays a list of top albums and includes a "Show all" button to toggle the view.
  * @returns {JSX.Element} The rendered top album component.
  */
-const TopAlbum = () => {
+const NewAlbum = () => {
   // Define the albumData state to store the fetched album data
   const [albumData, setAlbumData] = useState([]);
 
@@ -20,7 +20,8 @@ const TopAlbum = () => {
   // Fetch the top album data when the component is rendered
   useEffect(() => {
     const loadHandler = async () => {
-      let res = await topAlbumData();
+      let res = await newAlbumData();
+      console.log(res);
       setAlbumData(res);
     };
     loadHandler();
@@ -35,14 +36,14 @@ const TopAlbum = () => {
   };
 
   return (
-    <Box className="topAlbum">
-      <div className="topAlbum_static">
-        <h3>Top Albums</h3>
+    <Box className="newAlbum">
+      <div className="newAlbum_static">
+        <h3>New Albums</h3>
         <button onClick={handleOnClick}>
           {collapseView ? `Show all` : `Collapse`}
         </button>
       </div>
-      <Grid container spacing={collapseView ? 2:2} style={{paddingLeft:collapseView?"30px":"15px"}} className="topAlbum_cards">
+      <Grid container spacing={collapseView ? 2:2} style={{paddingLeft:collapseView?"30px":"15px"}} className="newAlbum_cards">
         {/* Render the cards based on the collapse view */}
         {albumData.map((albumItem, index) => {
           // Generate a unique id for each card
@@ -57,7 +58,7 @@ const TopAlbum = () => {
             );
           } else if (!collapseView) {
             return (
-              <Grid item md={2}>
+              <Grid item xs={2}>
                 <Card key={id} data={albumItem} type="normal" />
               </Grid>
             );
@@ -70,4 +71,4 @@ const TopAlbum = () => {
   );
 };
 
-export default TopAlbum;
+export default NewAlbum;

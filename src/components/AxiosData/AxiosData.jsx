@@ -13,6 +13,7 @@ export const getUId = () => {
 export const topAlbumData = async () => {
     try {
         let res = await axios.get(`${BackEndPoint}albums/top`);
+        // console.log(res)
         return res.data;
     } catch (e) {
         console.log(`error from AxiosData Component ->`, e);
