@@ -6,9 +6,9 @@ import Card from "../Card/Card";
 import "./TopAlbum.css";
 
 /**
- * Represents the top album component.
+ * Represents the TopAlbum component.
  * Displays a list of top albums and includes a "Show all" button to toggle the view.
- * @returns {JSX.Element} The rendered top album component.
+ * @returns {JSX.Element} The rendered TopAlbum component.
  */
 const TopAlbum = () => {
   // Define the albumData state to store the fetched album data
@@ -20,9 +20,16 @@ const TopAlbum = () => {
   // Fetch the top album data when the component is rendered
   useEffect(() => {
     const loadHandler = async () => {
-      let res = await topAlbumData();
-      setAlbumData(res);
+      try {
+        // Fetch the top album data using the topAlbumData function from AxiosData
+        const res = await topAlbumData();
+        // Update the albumData state with the fetched data
+        setAlbumData(res);
+      } catch (error) {
+        console.log("Error fetching top album data:", error);
+      }
     };
+    // Call the loadHandler function
     loadHandler();
   }, []);
 
@@ -42,14 +49,19 @@ const TopAlbum = () => {
           {collapseView ? `Show all` : `Collapse`}
         </button>
       </div>
-      <Grid container spacing={collapseView ? 2:2} style={{paddingLeft:collapseView?"30px":"15px"}} className="topAlbum_cards">
+      <Grid
+        container
+        spacing={collapseView ? 2 : 2}
+        style={{ paddingLeft: collapseView ? "30px" : "15px" }}
+        className="topAlbum_cards"
+      >
         {/* Render the cards based on the collapse view */}
         {albumData.map((albumItem, index) => {
           // Generate a unique id for each card
           const id = getUId();
 
           // Determine whether to display the card based on the collapse view
-          if (collapseView && index  <6) {
+          if (collapseView && index < 6) {
             return (
               <Grid item xs={2}>
                 <Card key={id} data={albumItem} type="normal" />
@@ -57,7 +69,7 @@ const TopAlbum = () => {
             );
           } else if (!collapseView) {
             return (
-              <Grid item md={2}>
+              <Grid item xs={2}>
                 <Card key={id} data={albumItem} type="normal" />
               </Grid>
             );

@@ -8,17 +8,26 @@ import Faqs from './components/Faqs/Faqs';
 
 /**
  * Represents the layout component of the application.
- * Renders the navigation bar and hero section components.
+ * Renders the navigation bar and various sections/components.
  * @returns {JSX.Element} The rendered layout component.
  */
 const Layout = () => {
   return (
     <>
+      {/* Render the navigation bar */}
       <NavBar />
+
+      {/* Render the hero section */}
       <HeroSection />
-      <TopAlbum/>
-      <NewAlbum/>
-      <Faqs/>
+
+      {/* Render the top albums section */}
+      <TopAlbum />
+
+      {/* Render the new albums section */}
+      <NewAlbum />
+
+      {/* Render the FAQs section */}
+      <Faqs />
     </>
   );
 };

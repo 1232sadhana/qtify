@@ -6,9 +6,9 @@ import Card from "../Card/Card";
 import "./NewAlbum.css";
 
 /**
- * Represents the top album component.
- * Displays a list of top albums and includes a "Show all" button to toggle the view.
- * @returns {JSX.Element} The rendered top album component.
+ * Represents the NewAlbum component.
+ * Displays a list of new albums and includes a "Show all" button to toggle the view.
+ * @returns {JSX.Element} The rendered NewAlbum component.
  */
 const NewAlbum = () => {
   // Define the albumData state to store the fetched album data
@@ -17,13 +17,19 @@ const NewAlbum = () => {
   // Define the collapseView state to determine whether the view is collapsed or not
   const [collapseView, setCollapseView] = useState(true);
 
-  // Fetch the top album data when the component is rendered
+  // Fetch the new album data when the component is rendered
   useEffect(() => {
     const loadHandler = async () => {
-      let res = await newAlbumData();
-      console.log(res);
-      setAlbumData(res);
+      try {
+        // Fetch the new album data using the newAlbumData function from AxiosData
+        const res = await newAlbumData();
+        // Update the albumData state with the fetched data
+        setAlbumData(res);
+      } catch (error) {
+        console.log("Error fetching new album data:", error);
+      }
     };
+    // Call the loadHandler function
     loadHandler();
   }, []);
 
@@ -43,14 +49,19 @@ const NewAlbum = () => {
           {collapseView ? `Show all` : `Collapse`}
         </button>
       </div>
-      <Grid container spacing={collapseView ? 2:2} style={{paddingLeft:collapseView?"30px":"15px"}} className="newAlbum_cards">
+      <Grid
+        container
+        spacing={collapseView ? 2 : 2}
+        style={{ paddingLeft: collapseView ? "30px" : "15px" }}
+        className="newAlbum_cards"
+      >
         {/* Render the cards based on the collapse view */}
         {albumData.map((albumItem, index) => {
           // Generate a unique id for each card
           const id = getUId();
 
           // Determine whether to display the card based on the collapse view
-          if (collapseView && index  <6) {
+          if (collapseView && index < 6) {
             return (
               <Grid item xs={2}>
                 <Card key={id} data={albumItem} type="normal" />
