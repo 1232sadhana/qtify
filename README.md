@@ -59,5 +59,5 @@ To deploy this project run
 
 ## Feedback
 
-If you have any feedback, please reach out to us at contact.kuldeepahlawat.com
+If you have any feedback, please reach out to us at contact.kuldeepahlawat@gmail.com
 
