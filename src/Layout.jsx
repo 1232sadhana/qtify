@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import "./Layout.css";
 import TopAlbum from './components/topAlbum/TopAlbum';
 import NewAlbum from './components/newAlbum/NewAlbum';
+import Faqs from './components/Faqs/Faqs';
 
 /**
  * Represents the layout component of the application.
@@ -17,6 +18,7 @@ const Layout = () => {
       <HeroSection />
       <TopAlbum/>
       <NewAlbum/>
+      <Faqs/>
     </>
   );
 };
