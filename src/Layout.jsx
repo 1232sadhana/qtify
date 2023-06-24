@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 import HeroSection from "./components/HeroSection/HeroSection";
 import NavBar from "./components/NavBar/NavBar";
 import "./Layout.css";
-import TopAlbum from './components/topAlbum/TopAlbum';
-import NewAlbum from './components/newAlbum/NewAlbum';
-import Faqs from './components/Faqs/Faqs';
+import TopAlbum from "./components/topAlbum/TopAlbum";
+import NewAlbum from "./components/newAlbum/NewAlbum";
+import Faqs from "./components/Faqs/Faqs";
+import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
 
 /**
  * Represents the layout component of the application.
@@ -13,7 +14,7 @@ import Faqs from './components/Faqs/Faqs';
  */
 const Layout = () => {
   return (
-    <>
+    <div className="layout">
       {/* Render the navigation bar */}
       <NavBar />
 
@@ -28,7 +29,9 @@ const Layout = () => {
 
       {/* Render the FAQs section */}
       <Faqs />
-    </>
+      {/* Render the Audio Player */}
+      <AudioPlayer />
+    </div>
   );
 };
 
