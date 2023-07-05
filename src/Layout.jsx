@@ -6,6 +6,7 @@ import TopAlbum from "./components/topAlbum/TopAlbum";
 import NewAlbum from "./components/newAlbum/NewAlbum";
 import Faqs from "./components/Faqs/Faqs";
 import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
+import Songs from "./components/Songs/Songs";
 
 /**
  * Represents the layout component of the application.
@@ -26,7 +27,8 @@ const Layout = () => {
 
       {/* Render the new albums section */}
       <NewAlbum />
-
+      {/* Songs Section */}
+      <Songs/>
       {/* Render the FAQs section */}
       <Faqs />
       {/* Render the Audio Player */}
